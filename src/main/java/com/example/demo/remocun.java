@@ -7,6 +7,6 @@ public class remocun {
         TV sTv = new TV("samsung");
         TV hTv = new TV("HP", 2048);
 
-        hTv.
+
     }
 }
