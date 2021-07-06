@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Scanner;
+
 public class MacRemo {
 
 
@@ -9,12 +11,14 @@ public class MacRemo {
         Mac mac1 = new Mac("골드");
         Mac mac2 = new Mac();
 
-        System.out.println(mac1.toString());
+        mac.colortype();
+
+        //System.out.println(s);
 
 
-        mac.colortype("실버");
-        mac.setMemory(512);
-        mac.sizein(16);
+       // mac.colortype("실버");
+        //mac.setMemory(512);
+        //mac.sizein(16);
 
     }
 }

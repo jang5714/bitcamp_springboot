@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Scanner;
+
 public class Mac {
     @Override
     public String toString() {
@@ -19,8 +21,8 @@ public class Mac {
         power = false;
     }
 
-    Mac(String a){
-        color = a;
+    Mac(String s){
+        color = s;
         size = 13;
         memory = 512;
         power = false;
@@ -29,13 +31,18 @@ public class Mac {
 //-----------------------------------------------------
 
 
-    public void colortype(String a){
-        if (a == "실버"){
-            System.out.println("실버 색상이 너무 아름다우세용");
+    public void colortype(){
+        System.out.println("색상이 무엇이니?");
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.next();
+
+        if (s.equals ("실버") ){
+            System.out.println("실버네용");
         }
         else {
-            System.out.println("골드는 좀 구리네요");
+            System.out.println("아닌데용");
         }
+
     }
 
     public void sizein (int a){

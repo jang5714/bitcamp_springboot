@@ -7,7 +7,7 @@ public class MyObject {
         System.out.println("숫자 1 ?");
         Scanner scanner = new Scanner(System.in);//갹체
         // = 기준으로 new가 있어야 한다
-        int num1 = scanner.nextInt();
+        int num1 = scanner.nextInt(); //String next 기본값
         System.out.println("숫자 2 ?");
         int num2 = scanner.nextInt();
         int num3 = num1 + num2;

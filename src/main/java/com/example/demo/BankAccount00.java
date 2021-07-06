@@ -2,21 +2,26 @@ package com.example.demo;
 
 public class BankAccount00 {
     public static void main(String[] args) {
-        //두개의 인스턴스 생성
-        BankAccountPO yoon =new BankAccountPO();
-        BankAccountPO park =new BankAccountPO();
 
-        // 각 인스턴스를 대상으로 예금을 진행
+
+        final double PI = 3.1513;
+
+
+        //두개의 인스턴스 생성
+
+
+        BankAccountUniID yoon = new BankAccountUniID("546-8587-546", "95864-15659", 8000);
+        BankAccountUniID park = new BankAccountUniID("518-8499-785", "8846-897564", 3000);
+
         yoon.deposit(5000);
         park.deposit(3000);
 
-        // 각 인스턴스를 대상으로 출금을 진행
         yoon.withdraw(2000);
-        park.withdraw(2000);
+        park.withdraw(1000);
 
-        // 각 인스턴스를 대상으로 잔액을 조회.
         yoon.checkMyBalance();
         park.checkMyBalance();
+
 
     }
 }
