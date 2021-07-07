@@ -31,15 +31,17 @@ public class BankAccount {
         return this.amount;
     }
 
-    @Override
-    public String toString() {
-        return String.format("계좌번호 : %s\n주민번호 : %s\n통장잔액 : %d"+accNumber + ssNumber +(balance-amount));
+    public int deposit(int amount){ //입금
+        balance += amount;
+        return balance;
     }
-    /*
-    @Override
-    public String toString() {
-        return String.format("계좌번호 : %s\n주민번호 : %s\n통장잔액 : %d"+accNumber + ssNumber +(balance-amount));
+    public int withdraw(int amount){ //출금
+        balance -= amount;
+        return balance;
     }
 
-     */
+    @Override
+    public String toString() {
+        return String.format("계좌번호 : %s\n주민번호 : %s\n통장잔액 : %d",accNumber ,ssNumber,balance);
+    }
 }
