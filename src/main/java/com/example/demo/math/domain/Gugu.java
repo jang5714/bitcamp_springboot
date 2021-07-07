@@ -1,6 +1,6 @@
-package com.example.demo._GuGu;
+package com.example.demo.math.domain;
 
-public class gugu {
+public class Gugu {
 
 
     public static void test() {
