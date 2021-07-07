@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import java.util.Scanner;
-class Bicysle {
+public class Bicycle {
     private int gear;
     private String pedal;
     private int speed;
@@ -28,22 +28,5 @@ class Bicysle {
     @Override
     public String toString() {
         return String.format("기어 : %d단 \n페달 : %s\n스피드 : %dkm",gear,pedal,speed);
-    }
-}
-
-public class BicyclesMain {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Bicysle bicysle = new Bicysle();
-
-        System.out.println("기어가 몇단이니?");
-        bicysle.setGear(scanner.nextInt());
-        System.out.println("페달이 어느 꺼니?");
-        bicysle.setPedal(scanner.next());
-        System.out.println("스피드가 몇이니?");
-        bicysle.setSpeed(scanner.nextInt());
-
-        System.out.printf(bicysle.toString());
-
     }
 }
