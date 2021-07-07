@@ -1,4 +1,6 @@
-package com.example.demo;
+package com.example.demo._0706;
+
+import com.example.demo._0706.TV;
 
 public class remocun {
     public static void main(String[] args) {
