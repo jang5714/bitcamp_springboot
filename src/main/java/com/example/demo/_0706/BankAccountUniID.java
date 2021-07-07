@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo._0706;
 
 public class BankAccountUniID {
     String accNumber; // 계좌 번호

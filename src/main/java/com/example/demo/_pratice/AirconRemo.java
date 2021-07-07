@@ -1,4 +1,6 @@
-package com.example.demo;
+package com.example.demo._pratice;
+
+import com.example.demo._pratice.Aircon;
 
 public class AirconRemo {
     public static void main(String[] args) {

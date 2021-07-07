@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.demo._0706;
 
-import java.util.Scanner;
+import com.example.demo._0706.Mac;
 
 public class MacRemo {
 

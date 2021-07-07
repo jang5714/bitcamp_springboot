@@ -1,8 +1,8 @@
-package com.example.demo;
+package com.example.demo.first;
 
 import java.util.Scanner;
 
-public class MyObject {
+public class Calkulator {
     public static void main(String[] args) {
         System.out.println("숫자 1 ?");
         Scanner scanner = new Scanner(System.in);//갹체
