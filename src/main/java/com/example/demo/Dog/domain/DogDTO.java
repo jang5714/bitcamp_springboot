@@ -4,7 +4,7 @@ package com.example.demo.Dog.domain;
 import java.util.Scanner;
 
 
-public class Dog {
+public class DogDTO {
     private String name;
     private String color;
     private String breed;

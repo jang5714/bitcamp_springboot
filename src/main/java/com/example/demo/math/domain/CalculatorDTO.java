@@ -1,9 +1,10 @@
 package com.example.demo.math.domain;
 
-public class Calculator {
+public class CalculatorDTO {
     private int num1;
     private int num2;
     private String opcate;
+
     public void setNum1(int num1){
         this.num1 = num1;
     }

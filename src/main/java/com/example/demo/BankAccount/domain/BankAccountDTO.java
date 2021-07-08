@@ -1,6 +1,6 @@
 package com.example.demo.BankAccount.domain;
 
-public class BankAccount {
+public class BankAccountDTO {
     private String accNumber; // 계좌 번호
     private String ssNumber;  // 주민 번호
     private int balance;   // 통장

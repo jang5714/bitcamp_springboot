@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.Scanner;
 public class Bicycle {
+
     private int gear;
     private String pedal;
     private int speed;
