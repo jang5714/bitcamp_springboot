@@ -2,12 +2,15 @@ package com.example.demo.math.controller;
 
 
 import com.example.demo.math.domain.CalculatorDTO;
+import com.example.demo.math.sevice.CalculatorService;
+import com.example.demo.math.sevice.Calculatorlmpl;
 
 import java.util.Scanner;
 
 public class CalculatorController {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        CalculatorService calculatorService = new Calculatorlmpl();
         CalculatorDTO calculator = new CalculatorDTO();
         System.out.println("숫자 1 ?");
         calculator.setNum1(scanner.nextInt());
@@ -18,18 +21,22 @@ public class CalculatorController {
 
         int result =  0;
         switch (calculator.getOpcode()){
-            case "+" : result = calculator.getNum1()+calculator.getNum2();
+            case "+": result = calculatorService.add(calculator);
             break;
-            case "-": result = calculator.getNum1()- calculator.getNum2();
+            case "-": result = calculatorService.subtract(calculator);
             break;
-            case "*": result = calculator.getNum1()* calculator.getNum2();
+            case "*": result = calculatorService.multiple(calculator);
             break;
-            case "/": result = calculator.getNum1()/ calculator.getNum2();
+            case "/": result = calculatorService.divide(calculator);
             break;
-            case "%": result = calculator.getNum1()% calculator.getNum2();
+            case "%": result = calculatorService.remain(calculator);
             break;
         }
-        System.out.println(result);
-        System.out.println(calculator.toString());
+        System.out.printf("%d %s %d = %d",
+                calculator.getNum1(),
+                calculator.getOpcode(),
+                calculator.getNum2(),
+                result);
+
     }
 }
