@@ -5,10 +5,9 @@ import com.example.demo.Bicycle;
 import java.util.Scanner;
 
 public class BicyclesController {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Bicycle bicysle = new Bicycle();
-
+    Scanner scanner = new Scanner(System.in);
+    Bicycle bicysle = new Bicycle();
+    public void Bicyslescontroller (){
         System.out.println("기어가 몇단이니?");
         bicysle.setGear(scanner.nextInt());
         System.out.println("페달이 어느 꺼니?");

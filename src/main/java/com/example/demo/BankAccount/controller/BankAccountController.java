@@ -5,10 +5,10 @@ import com.example.demo.BankAccount.domain.BankAccountDTO;
 import java.util.Scanner;
 
 public class BankAccountController {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        BankAccountDTO bankAccount = new BankAccountDTO();
+    Scanner scanner = new Scanner(System.in);
+    BankAccountDTO bankAccount = new BankAccountDTO();
 
+    public void BankAcoountcontroller(){
         System.out.println("계좌 번호는 :");
         bankAccount.setAccNumber(scanner.next());
         System.out.println("주민 번호는 :");
@@ -21,7 +21,6 @@ public class BankAccountController {
         bankAccount.withdraw(bankAccount.getAmount());
 
         System.out.println(bankAccount.toString());
-
 
     }
 }

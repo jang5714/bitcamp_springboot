@@ -5,9 +5,9 @@ import com.example.demo.Dog.domain.DogDTO;
 import java.util.Scanner;
 
 public class DogController {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        DogDTO dog = new DogDTO();
+    DogDTO dog = new DogDTO();
+    Scanner scanner = new Scanner(System.in);
+    public void DogController (){
         System.out.println("이름이 무엇이냐");
         dog.setName(scanner.next()); //set은 입력만
         System.out.println("색깔이 무엇이냐");
@@ -18,8 +18,5 @@ public class DogController {
         dog.setHungry(scanner.next());
 
         System.out.printf(dog.toString());
-        //get은 출력력    }
     }
-
-
 }
