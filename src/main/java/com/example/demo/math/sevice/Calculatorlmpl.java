@@ -28,21 +28,17 @@ public class Calculatorlmpl implements CalculatorService{
         return calculator.getNum1()%calculator.getNum2();
     }
 
-
-
     @Override
     public int[] sequence(CalculatorDTO calculator) {
-        int count = calculator.getNum2() - calculator.getNum1() + 1;//
-        int [] arr = new int[count]; //배열 크기 설정
-        int i = 0; //index 값(입력값)
-        for (int j =calculator.getNum1(); j<=calculator.getNum2(); j++){ //값
-            arr[i]=j;
+        int count = calculator.getNum2()-calculator.getNum1() +1;
+        int[] arr = new int[count];
+        int i = 0;
+        for (int j = calculator.getNum1();j<=calculator.getNum2(); j++){
+            arr[i] = j;
             i++;
         }
         return arr;
     }
-
-
 
 
 }
