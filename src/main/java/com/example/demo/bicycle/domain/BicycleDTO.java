@@ -1,7 +1,6 @@
 package com.example.demo.bicycle.domain;
 
 public class BicycleDTO {
-    public class Bicycle {
 
         private int gear;
         private String pedal;
@@ -30,5 +29,5 @@ public class BicycleDTO {
         public String toString() {
             return String.format("기어 : %d단 \n페달 : %s\n스피드 : %dkm",gear,pedal,speed);
         }
-    }
 }
+
