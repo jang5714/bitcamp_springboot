@@ -1,7 +1,5 @@
 package com.example.demo.bicycle.controller;
 
-import com.example.demo.Bicycle;
-
 import java.util.Scanner;
 
 public class BicyclesController {
