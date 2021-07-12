@@ -1,12 +1,22 @@
 package com.example.demo.bicycle.controller;
 
+import com.example.demo.BankAccount.service.BankAccountImpl;
+import com.example.demo.BankAccount.service.BankAccountService;
 import com.example.demo.bicycle.domain.BicycleDTO;
 
 import java.util.Scanner;
 
 public class BicyclesController {
-    Scanner scanner = new Scanner(System.in);
-    BicycleDTO bicycleDTO = new BicycleDTO();
+
+    private BankAccountService bankAccountService;
+    private Scanner scanner;
+    private BicycleDTO bicycleDTO;
+
+    public BicyclesController(){
+        this.bankAccountService = new BankAccountImpl();
+        this.scanner = new Scanner(System.in);
+        this.bicycleDTO = new BicycleDTO();
+    }
 
     public void Bicyslescontroller (){
         System.out.println("기어가 몇단이니?");
