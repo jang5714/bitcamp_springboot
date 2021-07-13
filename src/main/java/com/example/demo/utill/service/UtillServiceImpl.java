@@ -6,11 +6,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-public class UtillImpl implements UtillService {
+public class UtillServiceImpl implements UtillService {
 
         private UtillDTO utillDTO;
 
-        public UtillImpl(){
+        public UtillServiceImpl(){
         this.utillDTO = new UtillDTO();
     }
 

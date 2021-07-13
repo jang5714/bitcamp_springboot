@@ -3,14 +3,14 @@ package com.example.demo.math.controller;
 
 import com.example.demo.math.domain.CalculatorDTO;
 import com.example.demo.math.sevice.CalculatorService;
-import com.example.demo.math.sevice.Calculatorlmpl;
+import com.example.demo.math.sevice.CalculatorServicelmpl;
 
 import java.util.Scanner;
 
 public class CalculatorController {
     Scanner scanner = new Scanner(System.in);
     CalculatorDTO calculator = new CalculatorDTO();
-    CalculatorService calculatorService = new Calculatorlmpl();
+    CalculatorService calculatorService = new CalculatorServicelmpl();
 
 
     public void calculate(){

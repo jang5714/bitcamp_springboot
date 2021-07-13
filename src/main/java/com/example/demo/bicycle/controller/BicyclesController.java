@@ -3,30 +3,37 @@ package com.example.demo.bicycle.controller;
 import com.example.demo.BankAccount.service.BankAccountImpl;
 import com.example.demo.BankAccount.service.BankAccountService;
 import com.example.demo.bicycle.domain.BicycleDTO;
+import com.example.demo.bicycle.service.BicycleService;
+import com.example.demo.bicycle.service.BicycleServicelmpl;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class BicyclesController {
+    private BicycleService bicycleService;
 
-    private BankAccountService bankAccountService;
-    private Scanner scanner;
-    private BicycleDTO bicycleDTO;
-
-    public BicyclesController(){
-        this.bankAccountService = new BankAccountImpl();
-        this.scanner = new Scanner(System.in);
-        this.bicycleDTO = new BicycleDTO();
+    public BicyclesController() {
+        bicycleService = new BicycleServicelmpl();
     }
-
-    public void Bicyslescontroller (){
-        System.out.println("기어가 몇단이니?");
-        bicycleDTO.setGear(scanner.nextInt());
-        System.out.println("페달이 어느 꺼니?");
-        bicycleDTO.setPedal(scanner.next());
-        System.out.println("스피드가 몇이니?");
-        bicycleDTO.setSpeed(scanner.nextInt());
-
-        System.out.printf(bicycleDTO.toString());
+    public void add(BicycleDTO bicycle) {
+        bicycleService.add(bicycle);
+    }
+    public int counts() {
+        return bicycleService.count();
+    }
+    public void show() {
+        System.out.println("자전거의 개수 : "+ bicycleService.count());
+        System.out.print(bicycleService.show());
+    }
+    public void changingGear() {
 
     }
+    public void changingPedalcadence() {
+
+    }
+    public void applyingBrakes() {
+
+    }
+
 }
+

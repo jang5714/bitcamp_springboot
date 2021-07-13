@@ -2,7 +2,8 @@ package com.example.demo.math.sevice;
 
 import com.example.demo.math.domain.CalculatorDTO;
 
-public class Calculatorlmpl implements CalculatorService{
+public class CalculatorServicelmpl implements CalculatorService{
+
     @Override
     public int add(CalculatorDTO calculator) { //더하기
         return calculator.getNum1() + calculator.getNum2();

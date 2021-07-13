@@ -4,30 +4,38 @@ import com.example.demo.Dog.domain.DogDTO;
 import com.example.demo.Dog.service.DogService;
 import com.example.demo.Dog.service.DogServiceimpl;
 
-import java.util.Scanner;
+import java.util.List;
+
 
 public class DogController {
+    private final DogService dogService;
 
-    private DogService dogService;
-    private DogDTO dog;
-    private Scanner scanner;
-
-    public DogController(){
-        this.dogService = new DogServiceimpl();
-        this.dog = new DogDTO();
-        this.scanner = new Scanner(System.in);
+    public DogController (){
+        dogService = new DogServiceimpl();
     }
 
-    public void DogController (){
-        System.out.println("이름이 무엇이냐");
-        dog.setName(scanner.next()); //set은 입력만
-        System.out.println("색깔이 무엇이냐");
-        dog.setColor(scanner.next());
-        System.out.println("품종이 무엇이니");
-        dog.setBreed(scanner.next());
-        System.out.println("배고 프니?");
-        dog.setHungry(scanner.next());
+    public void add(DogDTO dog){
+        dogService.add(dog);
+    }
 
-        System.out.printf(dog.toString());
+    public int count() {
+        return dogService.count();
+    }
+
+    public void show(){
+        System.out.println("강아지의 수 : " + dogService.count());
+        System.out.println(dogService.show());
+    }
+
+    public String barking(String bark) {
+        return dogService.barking(bark);
+    }
+
+    public String fetching(String target) {
+        return dogService.fetching(target);
+    }
+
+    public String waggingTail() {
+        return dogService.waggingTail();
     }
 }
