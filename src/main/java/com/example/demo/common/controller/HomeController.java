@@ -60,36 +60,35 @@ public class HomeController {
                     new UtillController().todayAndCurrentTime();
                     break;
                 case "6":
-                    BankAccountDTO bankAccount = new BankAccountDTO();
+
                     while (true) {
+                        BankAccountDTO bankAccount = new BankAccountDTO();
                         System.out.println("[0]종료 [1]계좌생성 [2]잔액 확인 [3] 계좌목록");
                         switch (scanner.next()) {
                             case "0":
-                                break;
+                                return;
                             case "1":
-                                System.out.println("게좌를 생성할려면 이름을 일력하세요 :");
-                                bankAccount.setName(scanner.next());
-                                bankAccountController.createAccount(bankAccount);
-                                System.out.println("생성된 계좌 : " + bankAccount.getAccountNumber());
-                                bankAccountController.add(bankAccount);
-                                System.out.println("[메뉴] 0. 종료\t1. 입금\t2. 출금");
+                                    System.out.println("게좌를 생성할려면 이름을 일력하세요 :");
+                                    bankAccount.setName(scanner.next());
+                                    bankAccountController.createAccount(bankAccount);
+                                    System.out.println("생성된 계좌 : " + bankAccount.getAccountNumber());
+                                    bankAccountController.add(bankAccount);
+                                    System.out.println("[메뉴] 0. 종료\t1. 입금\t2. 출금\t3. 종료");
                                 switch (scanner.next()) {
-                                    case "0":
-                                        System.out.println("종료합니다");
-                                        return;
                                     case "1" :
-                                    System.out.println("입금 하실 금액을 입력하십쇼");
-                                    bankAccount.setMoney(scanner.nextInt());
-                                    bankAccountController.deposit(bankAccount);
-                                    System.out.println(bankAccount.getName() + "님의 잔액은 " + bankAccount.getBalance());
-                                    break;
+                                        System.out.println("입금 하실 금액을 입력하십쇼");
+                                        bankAccount.setMoney(scanner.nextInt());
+                                        bankAccountController.deposit(bankAccount);
+                                        System.out.println(bankAccount.getName() + "님의 잔액은 " + bankAccount.getBalance());
+                                        break;
                                     case "2" :
                                         System.out.println("출금 하실 금액을 입력하십쇼");
                                         bankAccount.setMoney(scanner.nextInt());
                                         bankAccountController.withdraw(bankAccount);
                                         System.out.println(bankAccount.getName() + "님의 잔액은 " + bankAccount.getBalance());
                                         break;
-
+                                    case "3":
+                                        break;
                                 }
                                 break;
                             case "2":
