@@ -9,7 +9,7 @@ import java.util.List;
 
 public class DogServiceimpl implements DogService{
     private final DogDTO dog;
-    private ArrayList<DogDTO> dogs;
+    private List<DogDTO> dogs;
 
     public DogServiceimpl(){
         dog = new DogDTO();
@@ -27,7 +27,7 @@ public class DogServiceimpl implements DogService{
     }
 
     @Override
-    public List<DogDTO> show() {
+    public List<?> show() {
         return dogs;
     }
 

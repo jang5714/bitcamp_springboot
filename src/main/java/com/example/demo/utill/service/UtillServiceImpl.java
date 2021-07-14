@@ -31,4 +31,14 @@ public class UtillServiceImpl implements UtillService {
             return String.format("%s %s", nowtoday(), now());
 
         }
+
+    @Override
+    public String randumNumbers(int digits, boolean allowZeroValue) {
+        String first = "" ,result = "";
+        first += allowZeroValue ? ((int)(Math.random()*10)) : ((int)(Math.random()*9+1));
+        for(int i=0; i<digits; i++){ //카운트
+            result += (int)(Math.random()*10);
+        }
+        return result;
     }
+}

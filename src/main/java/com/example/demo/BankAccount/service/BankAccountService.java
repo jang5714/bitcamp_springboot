@@ -13,13 +13,13 @@ import java.util.List;
  */
 
 public interface BankAccountService {
-    void add(BankAccountDTO bankAccount); //계좌 갯수 추가
+    void createAccount(BankAccountDTO bankAccount);
     int count (); //개좌 개수
-    List<BankAccountDTO> show (); //계좌 컬렉션 추가
-    void createAccount(BankAccountDTO bankAccountDTO);
-    int finadBalance(BankAccountDTO bankAccountDTO);
-    int deposit(BankAccountDTO bankAccountDTO);
-    int withdraw(BankAccountDTO bankAccountDTO);
-    void dropAccount(BankAccountDTO bankAccountDTO);
+    List<?> findall (); //계좌 컬렉션 추가
+    String[] findAllAccountNumber();
+    int finadBalance(BankAccountDTO bankAccount);
+    int deposit(BankAccountDTO bankAccount);
+    int withdraw(BankAccountDTO bankAccount);
+    void dropAccount(BankAccountDTO bankAccount);
 
 }

@@ -60,56 +60,9 @@ public class HomeController {
                     new UtillController().todayAndCurrentTime();
                     break;
                 case "6":
+                    new BankAccountController().main();
 
-                    while (true) {
-                        BankAccountDTO bankAccount = new BankAccountDTO();
-                        System.out.println("[0]종료 [1]계좌생성 [2]잔액 확인 [3] 계좌목록");
-                        switch (scanner.next()) {
-                            case "0":
-                                return;
-                            case "1":
-                                    System.out.println("게좌를 생성할려면 이름을 일력하세요 :");
-                                    bankAccount.setName(scanner.next());
-                                    bankAccountController.createAccount(bankAccount);
-                                    System.out.println("생성된 계좌 : " + bankAccount.getAccountNumber());
-                                    bankAccountController.add(bankAccount);
-                                    System.out.println("[메뉴] 0. 종료\t1. 입금\t2. 출금\t3. 종료");
-                                switch (scanner.next()) {
-                                    case "1" :
-                                        System.out.println("입금 하실 금액을 입력하십쇼");
-                                        bankAccount.setMoney(scanner.nextInt());
-                                        bankAccountController.deposit(bankAccount);
-                                        System.out.println(bankAccount.getName() + "님의 잔액은 " + bankAccount.getBalance());
-                                        break;
-                                    case "2" :
-                                        System.out.println("출금 하실 금액을 입력하십쇼");
-                                        bankAccount.setMoney(scanner.nextInt());
-                                        bankAccountController.withdraw(bankAccount);
-                                        System.out.println(bankAccount.getName() + "님의 잔액은 " + bankAccount.getBalance());
-                                        break;
-                                    case "3":
-                                        break;
-                                }
-                                break;
-                            case "2":
-                                System.out.println("잔액을 확인할려면 이름과 은행 이름을 입력해주세요");
-                                System.out.println("이름을 입력 하십쇼");
-                                String imsi = scanner.next();
-                                System.out.println("은행 이름을 입력 하십쇼");
-                                if(imsi == bankAccount.getName()) {
-                                    System.out.println(bankAccount.getAccountNumber() + bankAccount.getBalance());
-                                }else {
-                                    System.out.println("이름이 없습니다.");
-                                }
-                                break;
-                            case "3":
-                                bankAccountController.show();
-                                break;
-
-
-                        }
-                    }
-            }
+                }
         }
     }
 }

@@ -1,27 +1,24 @@
 package com.example.demo.BankAccount.service;
 
 import com.example.demo.BankAccount.domain.BankAccountDTO;
+import com.example.demo.utill.service.UtillService;
+import com.example.demo.utill.service.UtillServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class BankAccountImpl implements BankAccountService{
+
      private BankAccountDTO bankAccount;
-     private Random rand;
      private List<BankAccountDTO> bankAccounts;
 
      public BankAccountImpl(){
          this.bankAccount = new BankAccountDTO();
-         rand = new Random();
          bankAccounts = new ArrayList<>();
      }
-
-    @Override
-    public void add(BankAccountDTO bankAccount) {
-        bankAccounts.add(bankAccount);
-    }
 
     @Override
     public int count() {
@@ -29,19 +26,30 @@ public class BankAccountImpl implements BankAccountService{
     }
 
     @Override
-    public List<BankAccountDTO> show() {
+    public List<?> findall() {
         return bankAccounts;
     }
 
     @Override
     public void createAccount(BankAccountDTO bankAccount) {
-        int randomNuber = rand.nextInt(10000);
-        int randomNuber2 = rand.nextInt(10000);
-        int randomNuber3 = rand.nextInt(10000);
-        bankAccount.setAccountNumber(String.format("%s - %s -%s",randomNuber,randomNuber2,randomNuber3));//생성한다고 눌러야만 생성이 된다.
-        bankAccount.setName(bankAccount.getName());
-
+        UtillService utillService = new UtillServiceImpl();
+        String accountNumber = utillService.randumNumbers(4,false) +"="+
+                utillService.randumNumbers(4,true)+"-"+
+                utillService.randumNumbers(4,true);
+        bankAccount.setAccountNumber(accountNumber);
+        bankAccounts.add(bankAccount);
     }
+
+    @Override
+    public String[] findAllAccountNumber() {
+         String[] accountNumber = new String[count()];
+         for(int i =0; i < count();i++){
+             accountNumber[i] = bankAccounts.get(i).getAccountNumber();
+         }
+        return accountNumber;
+    }
+
+
 
     @Override
     public int finadBalance(BankAccountDTO bankAccount) {

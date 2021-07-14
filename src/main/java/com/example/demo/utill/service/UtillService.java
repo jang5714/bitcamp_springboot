@@ -10,5 +10,7 @@ public interface UtillService {
     LocalDate nowtoday();
     LocalTime now();
     String todayAndCurrentTime();
+    String randumNumbers(int digits, boolean allowZeroValue);
+
 
 }

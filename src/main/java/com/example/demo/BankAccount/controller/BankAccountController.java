@@ -9,51 +9,35 @@ import java.util.Scanner;
 
 public class BankAccountController {
     private BankAccountService bankAccountService;
-
     public BankAccountController() {
         bankAccountService = new BankAccountImpl();
     }
+    public void main() {
+        Scanner scanner = new Scanner(System.in);
+        BankAccountDTO bankAccount = null;
+        while (true) {
+            System.out.println("[0]종료 [1]계좌생성 [2]잔액 확인 [3] 계좌목록");
+            switch (scanner.next()) {
+                case "0": return;
+                case "1":
+                    bankAccount = new BankAccountDTO();
+                    System.out.println("이름 :");
+                    bankAccount.setName(scanner.next());
+                    bankAccountService.createAccount(bankAccount);
+                    break;
+                case "2":
+                    System.out.println("개설된 계좌 수:" +bankAccountService.count());
+                    System.out.println(bankAccountService.findall());
+                    break;
+                case "3":
+                    for(String s: bankAccountService.findAllAccountNumber()){
+                        System.out.println(s + "\n");
+                    }
+                    break;
+            }
 
-    public void add(BankAccountDTO bankAccount) {
-        bankAccountService.add(bankAccount);
-    }
-
-
-    public int count() {
-        return bankAccountService.count();
-    }
-
-    public void show() {
-        System.out.println("계좌의 개수는 :" + bankAccountService.count());
-        System.out.println(bankAccountService.show());
-    }
-
-    public void createAccount(BankAccountDTO bankAccountDTO) {
-        bankAccountService.createAccount(bankAccountDTO);
-    }
-
-    public int finadBalance(BankAccountDTO bankAccount) {
-        return bankAccountService.finadBalance(bankAccount);
-    }
-
-    public int deposit(BankAccountDTO bankAccount) {
-        return bankAccountService.deposit(bankAccount);
-    }
-
-    public int withdraw(BankAccountDTO bankAccount) {
-        return bankAccountService.withdraw(bankAccount);
-    }
-
-    public void dropAccount(BankAccountDTO bankAccount) {
-
+        }
     }
 }
-    //
-//        public void BankAccountController02() {
-//
-//
-//
-//                }
-//            }
 
 
