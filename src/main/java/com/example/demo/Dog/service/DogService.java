@@ -8,7 +8,7 @@ import java.util.List;
 public interface DogService {
     void add(DogDTO dog); // Dog 배열안에 dog 추가
     int count(); // dog 배열의 크기
-    List<?> show (); //dog 배열
+    List<? extends DogDTO> findAll (); //dog 배열
     String barking (String bark);
     String fetching (String target);
     String waggingTail();

@@ -6,11 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BicycleServicelmpl implements BicycleService {
-    private final BicycleDTO bicycle;
-    private ArrayList<BicycleDTO> bicycles;
+
+    private final List<BicycleDTO> bicycles;
 
     public BicycleServicelmpl(){
-        bicycle = new BicycleDTO();
         bicycles = new ArrayList<>();
     }
     @Override
@@ -22,7 +21,7 @@ public class BicycleServicelmpl implements BicycleService {
         return bicycles.size();
     }
     @Override
-    public List<BicycleDTO> show() {
+    public List<? extends BicycleDTO> show() {
         return bicycles;
     }
     @Override

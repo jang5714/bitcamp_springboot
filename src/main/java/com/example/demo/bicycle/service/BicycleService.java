@@ -9,7 +9,7 @@ import java.util.List;
 public interface BicycleService {
     void add(BicycleDTO bicycle);
     int count();
-    List<BicycleDTO> show ();
+    List<? extends BicycleDTO> show ();
     void changingGear();
     void changingPedalcadence();
     void applyingBrakes();
