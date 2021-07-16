@@ -30,7 +30,7 @@ public class HomeController extends LambdaUtils {
                 case "3": dogController.main();break;
                 case "4": bicyclesController.main();break;
                 case "5": bankAccountController.main();break;
-                case "6": himartController.main();
+                case "6": himartController.main(); break;
                 }
         }
     }

@@ -80,7 +80,7 @@ public class BankAccountImpl extends LambdaUtils implements BankAccountService {
          for (BankAccountDTO b : bankAccounts){
              if(bankAccount.getAccountNumber().equals(b.getAccountNumber())){
                 int balance = strToInt.apply(b.getBalance());
-                b.setBalance(string.apply(balance) + strToInt.apply(bankAccount.getMoney()));
+                b.setBalance(string.apply((balance) + strToInt.apply(bankAccount.getMoney())));
                 print.accept("입금 후 정보 :" + b);
                  break;
              }else {
@@ -94,8 +94,8 @@ public class BankAccountImpl extends LambdaUtils implements BankAccountService {
          for(BankAccountDTO b : bankAccounts){
              if(bankAccount.getAccountNumber().equals(b.getAccountNumber())){
                  int balance = strToInt.apply(b.getBalance());
-                 b.setBalance(string.apply(balance)+strToInt.apply(bankAccount.getMoney()));
-                 print.accept("출금 후 정보 :"+b);
+                 b.setBalance(string.apply((balance - strToInt.apply(bankAccount.getMoney()))));
+                 print.accept("출금 후 정보 :" + b);
                  break;
              }else {
                  print.accept("해단 계좌가 존해하지 않슴니다");
