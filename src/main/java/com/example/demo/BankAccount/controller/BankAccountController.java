@@ -17,7 +17,7 @@ public class BankAccountController extends LambdaUtils {
         Scanner scanner = new Scanner(System.in);
         BankAccountDTO bankAccount = null; //재활용
         while (true) {
-            System.out.println("[0]종료 [1]계좌생성 [2]잔액 확인 [3] 계좌목록 [4] 입금");
+            System.out.println("[0]종료 [1]계좌생성 [2] 계좌목록 [3] 계좌번호목록 [4] 입금 [5] 출금");
             switch (scanner.next()) {
                 case "0": return;
                 case "1":
@@ -37,15 +37,28 @@ public class BankAccountController extends LambdaUtils {
                     for(String s: bankAccountService.findAllAccountNumber()){
                         print.accept(s + "\n");
                     }
+                    break;
                 case "4":
-                    print.accept("계좌번호 : ");
+                    print.accept("잔고 조회할 계좌번호 : ");
+                    bankAccountService.findAcountByAcountNumber(scanner.next());
+                    break;
+
+                case "5":
+                    print.accept("입금 할 계좌번호 : ");
                     bankAccount = new BankAccountDTO();
                     bankAccount.setAccountNumber(scanner.next());
                     print.accept("입금액 : ");
-                    bankAccount.setBalance(scanner.next());
+                    bankAccount.setMoney(scanner.next());
+                    bankAccountService.deposit(bankAccount);
                     break;
-                case "5":break;
-                case "6":break;
+                case "6":
+                    print.accept("출금 할 계좌번호 : ");
+                    bankAccount = new BankAccountDTO();
+                    bankAccount.setAccountNumber(scanner.next());
+                    print.accept("출금액 : ");
+                    bankAccount.setMoney(scanner.next());
+                    bankAccountService.withdraw(bankAccount);
+                    break;
 
             }
 
