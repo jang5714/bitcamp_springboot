@@ -17,7 +17,7 @@ public class BankAccountController extends LambdaUtils {
         Scanner scanner = new Scanner(System.in);
         BankAccountDTO bankAccount = null; //재활용
         while (true) {
-            System.out.println("[0]종료 [1]계좌생성 [2] 계좌목록 [3] 계좌번호목록 [4] 입금 [5] 출금");
+            System.out.println("[0]종료 [1]계좌생성 [2] 계좌목록 [3] 계좌번호목록 [4] 잔고조회 [5] 입금 [6] 출금");
             switch (scanner.next()) {
                 case "0": return;
                 case "1":

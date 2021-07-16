@@ -19,7 +19,7 @@ public class HomeController extends LambdaUtils {
         BicyclesController bicyclesController = new BicyclesController();
         BankAccountController bankAccountController = new BankAccountController();
         UtillController utillController = new UtillController();
-        HimartController himartController = new HimartController();
+        HimartController himartController =new HimartController();
 
         while (true) {
             System.out.println("\n[메뉴] 0.종료 1.유틸 2.수학 3.개 4.자전거 5.Bank 6.하이마트\n");
@@ -30,7 +30,7 @@ public class HomeController extends LambdaUtils {
                 case "3": dogController.main();break;
                 case "4": bicyclesController.main();break;
                 case "5": bankAccountController.main();break;
-                case "6": himartController.main();break;
+                case "6": himartController.main();
                 }
         }
     }
