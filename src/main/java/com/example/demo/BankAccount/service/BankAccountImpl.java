@@ -25,7 +25,7 @@ public class BankAccountImpl extends LambdaUtils implements BankAccountService {
     }
 
     private final BankAccountDTO bankAccount;
-     private final List<BankAccountDTO> bankAccounts;
+    private final List<BankAccountDTO> bankAccounts;
 
      public BankAccountImpl(){
          bankAccount = new BankAccountDTO();
@@ -77,7 +77,7 @@ public class BankAccountImpl extends LambdaUtils implements BankAccountService {
 
     @Override
     public void deposit(BankAccountDTO bankAccount) {
-         for (BankAccountDTO b : bankAccounts){
+         for (BankAccountDTO b : bankAccounts){ //
              if(bankAccount.getAccountNumber().equals(b.getAccountNumber())){
                 int balance = strToInt.apply(b.getBalance());
                 b.setBalance(string.apply((balance) + strToInt.apply(bankAccount.getMoney())));
